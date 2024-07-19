@@ -26,6 +26,12 @@ function compileWithCustomDirectives(source, directives, require, options) {
 function formatPath(path) {
     return path.replace(/\/+/g, "/").replace(/(?!^)\/$/, "");
 }
+function warn(msg) {
+    if (process.env.NODE_ENV === "development") {
+        console.warn(`[vue-i18n-editable warn] ${typeof msg === "string" ? msg : msg.message}`);
+    }
+}
 
 exports.compileWithCustomDirectives = compileWithCustomDirectives;
 exports.formatPath = formatPath;
+exports.warn = warn;

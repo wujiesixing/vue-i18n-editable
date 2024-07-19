@@ -2,7 +2,7 @@ import { get } from "lodash-es";
 import { ref } from "vue";
 
 import { i18nKey } from "./composable";
-import { formatPath } from "./utils";
+import { formatPath, warn } from "./utils";
 
 import type {
   App,
@@ -99,7 +99,7 @@ export class I18n {
 
       return message;
     } catch (error) {
-      console.error(error);
+      warn(error as Error);
     }
   }
 
@@ -152,7 +152,7 @@ export class I18n {
 
       return content;
     } catch (error) {
-      console.error(error);
+      warn(error as Error);
     }
   }
 
@@ -172,7 +172,7 @@ export class I18n {
 
       return get(message, key) ?? "";
     } catch (error) {
-      console.error(error);
+      warn(error as Error);
       return "";
     }
   }
@@ -199,7 +199,7 @@ export class I18n {
 
       return get(content, key) ?? "";
     } catch (error) {
-      console.error(error);
+      warn(error as Error);
       return "";
     }
   }

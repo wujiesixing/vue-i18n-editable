@@ -23,3 +23,11 @@ export function compileWithCustomDirectives(
 export function formatPath(path: string) {
   return path.replace(/\/+/g, "/").replace(/(?!^)\/$/, "");
 }
+
+export function warn(msg: Error | string) {
+  if (process.env.NODE_ENV === "development") {
+    console.warn(
+      `[vue-i18n-editable warn] ${typeof msg === "string" ? msg : msg.message}`
+    );
+  }
+}

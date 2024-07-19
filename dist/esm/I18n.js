@@ -1,7 +1,7 @@
 import { get } from 'lodash-es';
 import { ref } from 'vue';
 import { i18nKey } from './composable.js';
-import { formatPath } from './utils.js';
+import { warn, formatPath } from './utils.js';
 
 class I18n {
     locale = ref();
@@ -51,7 +51,7 @@ class I18n {
             return message;
         }
         catch (error) {
-            console.error(error);
+            warn(error);
         }
     }
     finRouteMessage(pathname) {
@@ -92,7 +92,7 @@ class I18n {
             return content;
         }
         catch (error) {
-            console.error(error);
+            warn(error);
         }
     }
     getText(key, locale) {
@@ -108,7 +108,7 @@ class I18n {
             return get(message, key) ?? "";
         }
         catch (error) {
-            console.error(error);
+            warn(error);
             return "";
         }
     }
@@ -129,7 +129,7 @@ class I18n {
             return get(content, key) ?? "";
         }
         catch (error) {
-            console.error(error);
+            warn(error);
             return "";
         }
     }

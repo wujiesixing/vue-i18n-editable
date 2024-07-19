@@ -53,7 +53,7 @@ class I18n {
             return message;
         }
         catch (error) {
-            console.error(error);
+            utils.warn(error);
         }
     }
     finRouteMessage(pathname) {
@@ -94,7 +94,7 @@ class I18n {
             return content;
         }
         catch (error) {
-            console.error(error);
+            utils.warn(error);
         }
     }
     getText(key, locale) {
@@ -110,7 +110,7 @@ class I18n {
             return lodashEs.get(message, key) ?? "";
         }
         catch (error) {
-            console.error(error);
+            utils.warn(error);
             return "";
         }
     }
@@ -131,7 +131,7 @@ class I18n {
             return lodashEs.get(content, key) ?? "";
         }
         catch (error) {
-            console.error(error);
+            utils.warn(error);
             return "";
         }
     }
