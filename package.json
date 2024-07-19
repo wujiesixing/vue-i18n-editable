@@ -1,0 +1,64 @@
+{
+  "name": "vue-i18n-editable",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/types/index.d.js"
+    },
+    "./vite-plugin": {
+      "import": "./dist/esm/vite-plugin.js",
+      "require": "./dist/cjs/vite-plugin.cjs",
+      "types": "./dist/types/vite-plugin.d.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "test": "rollup --config rollup.config.ts --configPlugin typescript --watch"
+  },
+  "keywords": [
+    "vue",
+    "i18n",
+    "editable",
+    "contenteditable",
+    "ssr"
+  ],
+  "author": "Gavin <wujiesixing@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
+    "@vue/compiler-dom": "^3.4.31",
+    "@vue/compiler-ssr": "^3.4.31",
+    "@vue/runtime-dom": "^3.4.31",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.14.10",
+    "rollup": "^4.18.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "tslib": "^2.6.3",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4"
+  },
+  "peerDependencies": {
+    "vite": ">=5.0.0",
+    "vue": ">=3.0.0",
+    "vue-router": ">=4.0.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  }
+}
