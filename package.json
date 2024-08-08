@@ -1,6 +1,6 @@
 {
   "name": "vue-i18n-editable",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.cjs",
@@ -24,6 +24,10 @@
   "scripts": {
     "build": "rollup --config rollup.config.ts --configPlugin typescript",
     "test": "rollup --config rollup.config.ts --configPlugin typescript --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujiesixing/vue-i18n-editable.git"
   },
   "keywords": [
     "vue",
