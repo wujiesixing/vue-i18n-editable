@@ -3,8 +3,8 @@ import { inject } from "vue";
 import type { InjectionKey, Ref } from "vue";
 
 export const i18nKey = Symbol("i18n") as InjectionKey<{
-  t: (key: string, locale?: string) => string;
-  rt: (key: string, pathname?: string) => string;
+  t: (key: string, locale?: string) => any;
+  rt: (key: string, pathname?: string) => any;
   locale: Ref<string | undefined>;
   ssrPathname: Ref<string | undefined>;
 }>;
