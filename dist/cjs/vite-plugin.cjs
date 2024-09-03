@@ -14,6 +14,7 @@ const filter = pluginutils.createFilter(["**/*.vue"], "node_modules/**");
 function VueI18nEditable() {
     return {
         name: "vite:VueI18nEditable",
+        enforce: "pre",
         transform(code, id) {
             if (!filter(id))
                 return null;
