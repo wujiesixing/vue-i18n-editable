@@ -140,14 +140,10 @@ class I18n {
             const { html } = modifiers;
             const text = getText(value, arg);
             if (html) {
-                if (!props?.hasOwnProperty("innerHTML")) {
-                    el.innerHTML = text;
-                }
+                el.innerHTML = text;
             }
             else {
-                if (!props?.hasOwnProperty("textContent")) {
-                    el.textContent = text;
-                }
+                el.textContent = text;
             }
             // contenteditable(el, value, html);
         };
@@ -158,18 +154,21 @@ class I18n {
             const { html } = modifiers;
             const text = getText(value, arg);
             if (html) {
-                if (!props?.hasOwnProperty("innerHTML")) {
-                    el.innerHTML = text;
-                }
+                el.innerHTML = text;
             }
             else {
-                if (!props?.hasOwnProperty("textContent")) {
-                    el.textContent = text;
-                }
+                el.textContent = text;
             }
         };
-        const getSSRProps = () => {
-            return {};
+        const getSSRProps = ({ value, modifiers, arg }) => {
+            const { html } = modifiers;
+            const text = getText(value, arg);
+            if (html) {
+                return { innerHTML: text };
+            }
+            else {
+                return { textContent: text };
+            }
         };
         return {
             created: register,

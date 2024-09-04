@@ -1,6 +1,6 @@
 {
   "name": "vue-i18n-editable",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.cjs",
@@ -11,11 +11,6 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.cjs",
       "types": "./dist/types/index.d.ts"
-    },
-    "./vite-plugin": {
-      "import": "./dist/esm/vite-plugin.js",
-      "require": "./dist/cjs/vite-plugin.cjs",
-      "types": "./dist/types/vite-plugin.d.ts"
     }
   },
   "files": [
@@ -58,7 +53,7 @@
   },
   "peerDependencies": {
     "vite": ">=5.0.0",
-    "vue": ">=3.0.0",
+    "vue": ">=3.4.36",
     "vue-router": ">=4.0.0"
   },
   "engines": {
