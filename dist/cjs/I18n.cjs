@@ -21,6 +21,8 @@ class I18n {
         this.routeMessages = options.routeMessages;
         this.getText = this.getText.bind(this);
         this.getRouteText = this.getRouteText.bind(this);
+        this.t = this.t.bind(this);
+        this.rt = this.rt.bind(this);
     }
     getLocale() {
         return this.locale.value || this.fallbackLocale;
