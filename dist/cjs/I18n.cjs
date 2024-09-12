@@ -46,7 +46,7 @@ class I18n {
             }
             let message = this.messages[locale];
             if (typeof message === "function") {
-                message = await message();
+                message = await message().then((module) => module.default ? module.default : module);
             }
             if (!message) {
                 throw new Error(`Message for locale ${locale} not found`);
@@ -87,7 +87,7 @@ class I18n {
             }
             let content = routeMessage.content;
             if (typeof content === "function") {
-                content = await content();
+                content = await content().then((module) => module.default ? module.default : module);
             }
             if (!content) {
                 throw new Error(`Content not defined for route message with pathname: ${pathname}`);
