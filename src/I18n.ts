@@ -107,7 +107,7 @@ export class I18n {
     }
   }
 
-  private finRouteMessage(pathname: string) {
+  private findRouteMessage(pathname: string) {
     if (!this.routeMessages) {
       throw new Error("Route messages not defined");
     }
@@ -130,7 +130,7 @@ export class I18n {
 
   public async loadRouteMessage(pathname: string) {
     try {
-      const routeMessage = this.finRouteMessage(pathname);
+      const routeMessage = this.findRouteMessage(pathname);
 
       if (!routeMessage) {
         throw new Error(`Route message for pathname ${pathname} not found`);
@@ -191,7 +191,7 @@ export class I18n {
         throw new Error("Pathname not set");
       }
 
-      const routeMessage = this.finRouteMessage(pathname);
+      const routeMessage = this.findRouteMessage(pathname);
 
       if (!routeMessage) {
         throw new Error(`Route message for pathname ${pathname} not found`);
